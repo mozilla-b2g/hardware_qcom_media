@@ -154,7 +154,11 @@ LOCAL_SRC_FILES         += ../common/src/extra_data_handler.cpp
 LOCAL_SRC_FILES         += ../common/src/vidc_color_converter.cpp
 LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
+ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
+#include $(BUILD_SHARED_LIBRARY)
+else
 include $(BUILD_SHARED_LIBRARY)
+endif
 
 
 # ---------------------------------------------------------------------------------
@@ -198,7 +202,11 @@ LOCAL_SRC_FILES         += ../common/src/extra_data_handler.cpp
 LOCAL_SRC_FILES         += ../common/src/vidc_color_converter.cpp
 LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
+ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
+#include $(BUILD_SHARED_LIBRARY)
+else
 include $(BUILD_SHARED_LIBRARY)
+endif
 
 endif
 endif
